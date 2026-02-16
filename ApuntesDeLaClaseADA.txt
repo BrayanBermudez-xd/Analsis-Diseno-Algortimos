@@ -1,0 +1,14 @@
+el deque() es mas eficiente para optimizar las listas, x=[1,2,3,4]
+dq.popleft()
+
+Criterios de evaluacion
+70% PROYECTO
+20% TAREAS
+10% ASISTENCIA/PARTICIPACION
+
+los algoritmos mas rapidos que existen de momento
+Timsort 
+Marge sort 
+Quick sort
+
+los exponenciales y factoriales son los mas peligroso(puede tronar el servidor o el sistema)
