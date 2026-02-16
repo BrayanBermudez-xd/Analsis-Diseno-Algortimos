@@ -21,3 +21,15 @@ github para agregar codigo
     y=1
     print(x+y)
 '''
+
+RECOMENDACIONES PARA CREAR UN GITHUB PAR ALA MATERIA  
+
+Nombre del reposito -analsisi Diseno algoritmos
+descripcion, podemos poner el nombre del alumno y criterios de evalacion 
+README.md 
+gitquere-python
+licencia-(publica) GNN v3
+
+tareas carpeta tarea_1 y ahi ira todo de la tarea y ahi va todo
+
+Markdowm o .md 
