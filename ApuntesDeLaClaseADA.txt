@@ -12,3 +12,12 @@ Marge sort
 Quick sort
 
 los exponenciales y factoriales son los mas peligroso(puede tronar el servidor o el sistema)
+
+github para agregar codigo 
+
+'''python 
+
+    x=0
+    y=1
+    print(x+y)
+'''
