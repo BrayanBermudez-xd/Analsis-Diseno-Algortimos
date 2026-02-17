@@ -1,2 +1,0 @@
-#Analizaremos el codigo fuente del juego del dinosaurio
-
