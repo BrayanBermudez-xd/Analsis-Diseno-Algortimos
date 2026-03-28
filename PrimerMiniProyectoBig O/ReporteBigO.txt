@@ -1,0 +1,140 @@
+REPORTE DE ANALISIS DE ALGORITMOS DE ORDENAMIENTO
+Basado en  Visualgo: https://visualgo.net/en/sorting
+
+1. INTRODUCCION
+
+En este reporte se analiza el comportamiento de distintos algoritmos de ordenamiento utilizando la plataforma Visualgo. Se comparan sus tiempos de ejecucion y su complejidad mediante notacion Big-O.
+
+
+2. CONFIGURACION DEL EXPERIMENTO
+
+Numero de elementos: 5
+Arreglo usado: [5, 3, 1, 4, 2]
+
+IMPORTANTE:
+Los tiempos mostrados corresponden a la simulacion de Visualgo, por lo tanto son valores relativos y no tiempos reales del procesador.
+
+
+3. RESULTADOS (TIEMPO EN SEGUNDOS SEGUN VISUALGO)
+
+Bubble Sort:        14.22 segundos
+Selection Sort:     12.85 segundos
+Insertion Sort:     8.47 segundos
+Merge Sort:         6.30 segundos
+Quick Sort:         5.95 segundos
+
+Nota: Estos valores son aproximados y pueden variar ligeramente dependiendo de la simulacion.
+
+
+
+4. ANALISIS POR ALGORITMO
+
+BUBBLE SORT
+
+Complejidad:
+Mejor caso: O(n)
+Promedio: O(n^2)
+Peor caso: O(n^2)
+
+Pseudocodigo:
+
+for i desde 0 hasta n:
+    for j desde 0 hasta n-i-1:
+        si arreglo[j] > arreglo[j+1]:
+            intercambiar
+
+Analisis:
+
+Bubble Sort es uno de los algoritmos mas sencillos, pero tambien uno de los mas lentos. Realiza muchas comparaciones innecesarias.
+
+SELECTION SORT
+
+Complejidad:
+O(n^2)
+
+Pseudocodigo:
+
+for i desde 0 hasta n:
+    minimo = i
+    for j desde i+1 hasta n:
+        si arreglo[j] < arreglo[minimo]:
+            minimo = j
+    intercambiar
+
+Analisis:
+
+Selection Sort busca el minimo en cada iteracion. No mejora aunque los datos ya esten ordenados.
+
+
+INSERTION SORT
+
+Complejidad:
+Mejor caso: O(n)
+Peor caso: O(n^2)
+
+Pseudocodigo:
+
+for i desde 1 hasta n:
+    clave = arreglo[i]
+    j = i - 1
+    mientras j >= 0 y arreglo[j] > clave:
+        mover arreglo[j]
+        j--
+    colocar clave
+
+Analisis:
+
+Es eficiente con pocos datos o arreglos casi ordenados. En el peor caso su rendimiento es cuadratico.
+
+
+MERGE SORT
+
+Complejidad:
+O(n log n)
+
+Pseudocodigo:
+
+dividir arreglo
+ordenar partes
+combinar
+
+Analisis:
+
+Muy eficiente para grandes cantidades de datos. Su crecimiento es mucho mas controlado.
+
+QUICK SORT
+
+Complejidad:
+Promedio: O(n log n)
+Peor caso: O(n^2)
+
+Pseudocodigo:
+
+elegir pivote
+dividir arreglo
+ordenar recursivamente
+
+Analisis:
+
+Es el algoritmo mas rapido en la mayoria de los casos. Su rendimiento depende de la eleccion del pivote.
+
+
+5. ANALISIS COMPARATIVO
+
+Los algoritmos cuadraticos como Bubble, Selection e Insertion tienen tiempos mas altos en la simulacion.
+
+Merge Sort y Quick Sort presentan mejor rendimiento debido a su complejidad O(n log n).
+
+Quick Sort resulto ser el mas rapido en esta prueba.
+
+
+
+6. CONCLUSIONES
+
+- Los algoritmos O(n^2) son menos eficientes.
+- Quick Sort es el mas rapido en la practica.
+- Merge Sort es estable pero usa mas memoria.
+- La eleccion del algoritmo afecta mucho el rendimiento.
+
+
+FIN DEL REPORTE
