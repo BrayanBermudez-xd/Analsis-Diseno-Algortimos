@@ -1,0 +1,216 @@
+Bubble Sort
+---------------------------------------------------------------
+@startuml
+start
+
+:Inicializar swapped = true;
+
+while (swapped == true?) is (sí)
+    :swapped = false;
+    :i = 0;
+
+    while (i < n-1?) is (sí)
+        if (A[i] > A[i+1]?) then (sí)
+            :Intercambiar A[i] y A[i+1];
+            :swapped = true;
+        endif
+        :i++;
+    endwhile
+
+endwhile
+
+stop
+@enduml
+------------------------------------------------------------------
+Selection Sort
+------------------------------------------------------------------
+@startuml
+start
+
+:i = 0;
+
+while (i < n-1?) is (sí)
+
+    :minIndex = i;
+    :j = i + 1;
+
+    while (j < n?) is (sí)
+        if (A[j] < A[minIndex]?) then (sí)
+            :minIndex = j;
+        endif
+        :j++;
+    endwhile
+
+    if (minIndex != i?) then (sí)
+        :Intercambiar A[i] con A[minIndex];
+    endif
+
+    :i++;
+endwhile
+
+stop
+@enduml
+-----------------------------------------------------------------------
+InsertionSort
+
+@startuml
+start
+
+:i = 1;
+
+while (i < n?) is (sí)
+
+    :X = A[i];
+    :j = i - 1;
+
+    while (j >= 0?) is (sí)
+        if (A[j] > X?) then (sí)
+            :A[j+1] = A[j];
+            :j--;
+        else (no)
+            break
+        endif
+    endwhile
+
+    :A[j+1] = X;
+    :i++;
+
+endwhile
+
+stop
+@enduml
+-------------------------------------------------------------------------
+Merge Sort
+
+@startuml
+start
+
+:Dividir arreglo en mitades;
+
+if (tamaño > 1?) then (sí)
+
+    :Dividir en izquierda y derecha;
+
+    :MergeSort(izquierda);
+    :MergeSort(derecha);
+
+    :i = inicio izquierda;
+    :j = inicio derecha;
+
+    while (hay elementos en ambas partes?) is (sí)
+        if (izquierda[i] <= derecha[j]?) then (sí)
+            :Copiar izquierda[i];
+            :i++;
+        else (no)
+            :Copiar derecha[j];
+            :j++;
+        endif
+    endwhile
+
+    :Copiar elementos restantes;
+    :Reunir (merge) en arreglo original;
+
+endif
+
+stop
+@enduml
+-----------------------------------------------------------------------------
+Quick Sort
+@startuml
+start
+
+:Elegir pivot = A[left];
+:storeIndex = left + 1;
+:i = left + 1;
+
+while (i <= right?) is (sí)
+
+    if (A[i] < pivot?) then (sí)
+        :swap(A[i], A[storeIndex]);
+        :storeIndex++;
+    endif
+
+    :i++;
+
+endwhile
+
+:swap(A[left], A[storeIndex - 1]);
+:pivotIndex = storeIndex - 1;
+
+if (subarreglo izquierdo > 1 elemento?) then (sí)
+    :QuickSort(left, pivotIndex - 1);
+endif
+
+if (subarreglo derecho > 1 elemento?) then (sí)
+    :QuickSort(pivotIndex + 1, right);
+endif
+
+stop
+@enduml
+---------------------------------------------------------------------
+random quick Sort
+@startuml
+start
+
+:Elegir índice aleatorio r entre left y right;
+:swap(A[left], A[r]);
+:pivot = A[left];
+
+:storeIndex = left + 1;
+:i = left + 1;
+
+while (i <= right?) is (sí)
+
+    if (A[i] < pivot?) then (sí)
+        :swap(A[i], A[storeIndex]);
+        :storeIndex++;
+    endif
+
+    :i++;
+
+endwhile
+
+:swap(A[left], A[storeIndex - 1]);
+:pivotIndex = storeIndex - 1;
+
+if (subarreglo izquierdo > 1 elemento?) then (sí)
+    :QuickSort(left, pivotIndex - 1);
+endif
+
+if (subarreglo derecho > 1 elemento?) then (sí)
+    :QuickSort(pivotIndex + 1, right);
+endif
+
+stop
+@enduml
+-------------------------------------------------------------------------
+counting Sort
+@startuml
+start
+
+:Crear arreglo de conteo (count);
+:Inicializar count en 0;
+
+:i = 0;
+while (i < n?) is (sí)
+    :count[A[i]]++;
+    :i++;
+endwhile
+
+:v = 0;
+:k = 0;
+
+while (v <= maxValor?) is (sí)
+
+    while (count[v] > 0?) is (sí)
+        :A[k] = v;
+        :k++;
+        :count[v]--;
+    endwhile
+
+    :v++;
+
+endwhile
+
+stop
+@enduml
